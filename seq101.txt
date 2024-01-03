@@ -1,0 +1,169 @@
+
+
+
+
+6星装备测试结果
+Mon Jan  1 19:14:43 2024
+一共出现25次日光，出现位置为：
+[0, 3, 8, 10, 16, 18, 33, 35, 40, 44, 48, 50, 53, 56, 63, 68, 71, 76, 79, 82, 83, 84, 88, 91, 100]
+0   6
+2   xx6
+4   xxxx6
+1   x6
+5   xxxxx6
+1   x6
+14   xxxxxxxxxxxxxx6
+1   x6
+4   xxxx6
+3   xxx6
+3   xxx6
+1   x6
+2   xx6
+2   xx6
+6   xxxxxx6
+4   xxxx6
+2   xx6
+4   xxxx6
+2   xx6
+2   xx6
+0   6
+0   6
+3   xxx6
+2   xx6
+8   xxxxxxxx6
+
+
+
+6星装备测试结果
+Mon Jan  1 19:38:47 2024
+一共出现24次日光，出现位置为：
+[0, 3, 8, 10, 16, 18, 33, 35, 40, 44, 48, 50, 53, 56, 63, 68, 71, 76, 79, 82, 84, 88, 91, 100]
+0   6
+2   xx6
+4   xxxx6
+1   x6
+5   xxxxx6
+1   x6
+14   xxxxxxxxxxxxxx6
+1   x6
+4   xxxx6
+3   xxx6
+3   xxx6
+1   x6
+2   xx6
+2   xx6
+6   xxxxxx6
+4   xxxx6
+2   xx6
+4   xxxx6
+2   xx6
+2   xx6
+1   x6
+3   xxx6
+2   xx6
+8   xxxxxxxx6
+
+
+
+5星装备测试结果
+Mon Jan  1 19:56:10 2024
+一共出现23次日光，出现位置为：
+[0, 3, 8, 10, 16, 18, 33, 35, 40, 44, 48, 53, 56, 63, 68, 71, 76, 79, 82, 83, 84, 91, 100]
+0   5
+2   xx5
+4   xxxx5
+1   x5
+5   xxxxx5
+1   x5
+14   xxxxxxxxxxxxxx5
+1   x5
+4   xxxx5
+3   xxx5
+3   xxx5
+4   xxxx5
+2   xx5
+6   xxxxxx5
+4   xxxx5
+2   xx5
+4   xxxx5
+2   xx5
+2   xx5
+0   5
+0   5
+6   xxxxxx5
+8   xxxxxxxx5
+
+
+
+4星装备测试结果
+Mon Jan  1 20:17:54 2024
+一共出现16次日光，出现位置为：
+[0, 3, 8, 10, 16, 35, 44, 48, 53, 56, 63, 71, 79, 82, 83, 100]
+0   4
+2   xx4
+4   xxxx4
+1   x4
+5   xxxxx4
+18   xxxxxxxxxxxxxxxxxx4
+8   xxxxxxxx4
+3   xxx4
+4   xxxx4
+2   xx4
+6   xxxxxx4
+7   xxxxxxx4
+7   xxxxxxx4
+2   xx4
+0   4
+16   xxxxxxxxxxxxxxxx4
+
+
+
+3星装备测试结果
+Mon Jan  1 20:29:52 2024
+一共出现10次日光，出现位置为：
+[0, 8, 10, 35, 44, 53, 63, 82, 83, 100]
+0   3
+7   xxxxxxx3
+1   x3
+24   xxxxxxxxxxxxxxxxxxxxxxxx3
+8   xxxxxxxx3
+8   xxxxxxxx3
+9   xxxxxxxxx3
+18   xxxxxxxxxxxxxxxxxx3
+0   3
+16   xxxxxxxxxxxxxxxx3
+
+
+
+Mon Jan  1 20:30:22 2024
+一共出现8次日光，出现位置为：
+所有装备测试结果
+0   3
+2   xx4
+4   xxxx3
+1   x3
+
+5   xxxxx4
+1   x5
+14   xxxxxxxxxxxxxx5
+1   x3
+4   xxxx5
+3   xxx3
+3   xxx4
+1   x6
+2   xx3
+2   xx4
+
+6   xxxxxx3
+4   xxxx5
+2   xx4
+4   xxxx5
+2   xx4
+2   xx3
+0   35
+3   xxx6
+2   xx5
+8   xxxxxxxx3
+
+
+

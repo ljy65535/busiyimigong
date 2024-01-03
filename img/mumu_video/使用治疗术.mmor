@@ -1,0 +1,108 @@
+{
+    "actions": [
+        {
+            "data": "{\"cmd\":\"detect_app\",\"params\":{\"app\":\"不思议迷宫\",\"package\":\"com.leiting.gumballs.huawei\"}}",
+            "extra1": "",
+            "extra2": "",
+            "timing": 0,
+            "type": "vcontrol"
+        },
+        {
+            "data": "press_rel:(0.854167,0.939063)",
+            "extra1": "1",
+            "extra2": "",
+            "timing": 2305,
+            "type": "touch"
+        },
+        {
+            "data": "release",
+            "extra1": "1",
+            "extra2": "",
+            "timing": 95,
+            "type": "touch"
+        },
+        {
+            "data": "press_rel:(0.25,0.782031)",
+            "extra1": "1",
+            "extra2": "",
+            "timing": 2104,
+            "type": "touch"
+        },
+        {
+            "data": "release",
+            "extra1": "1",
+            "extra2": "",
+            "timing": 117,
+            "type": "touch"
+        },
+        {
+            "data": "press_rel:(0.913889,0.3375)",
+            "extra1": "1",
+            "extra2": "",
+            "timing": 2003,
+            "type": "touch"
+        },
+        {
+            "data": "release",
+            "extra1": "1",
+            "extra2": "",
+            "timing": 95,
+            "type": "touch"
+        },
+        {
+            "data": "press_rel:(0.256944,0.357031)",
+            "extra1": "1",
+            "extra2": "",
+            "timing": 2121,
+            "type": "touch"
+        },
+        {
+            "data": "release",
+            "extra1": "1",
+            "extra2": "",
+            "timing": 82,
+            "type": "touch"
+        },
+        {
+            "data": "press_rel:(0.498611,0.947656)",
+            "extra1": "1",
+            "extra2": "",
+            "timing": 2196,
+            "type": "touch"
+        },
+        {
+            "data": "release",
+            "extra1": "1",
+            "extra2": "",
+            "timing": 85,
+            "type": "touch"
+        },
+        {
+            "data": "release",
+            "extra1": "4",
+            "extra2": "",
+            "timing": 2632,
+            "type": "touch"
+        },
+        {
+            "data": "release",
+            "extra1": "7",
+            "extra2": "",
+            "timing": 0,
+            "type": "touch"
+        },
+        {
+            "data": "reset",
+            "extra1": "",
+            "extra2": "",
+            "timing": 0,
+            "type": "touch"
+        }
+    ],
+    "info": {
+        "create_time": 1702541762612,
+        "package_name": "com.leiting.gumballs.huawei",
+        "resolution_x": 720,
+        "resolution_y": 1280
+    }
+}
