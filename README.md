@@ -7,3 +7,5 @@ mumu模拟器显示设置
 显示器设置
 ![Alt text](image-1.png)
 
+句柄设置
+![Alt text](image-2.png)
