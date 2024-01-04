@@ -146,7 +146,7 @@ def sequence_101(handle:basic.HANDLE, grade:int, seq_len:int=101, is_detect:bool
             basic.find_and_click(handle, "./img/shenduan/back.png", 1)
             basic.SL_basic(handle)
             # 点击炉子
-            _, _ = sequence_101(handle, 1, i, is_detect=False)   # 递归，推i次序                 # !!!!!!!!!!!!!此处推i或i-1存疑
+            _, _ = sequence_101(handle, 1, i, is_detect=False)   # 递归，推i次序              
             print("重新用低星装备垫结束")
             # 低星装备垫了i次
             pos = find_equipment(handle, equipments_path[str(grade)])
