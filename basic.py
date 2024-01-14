@@ -1,5 +1,6 @@
 import win32con, win32api
 import win32gui
+import pyautogui
 
 import sys, os
 import time
@@ -25,13 +26,22 @@ class HANDLE():
 
 
 
-# 获得句柄
+# 获得游戏句柄
 def get_handle(FrameTitle = "不思议迷宫"):
     mumu_handle_id = win32gui.FindWindow(0, FrameTitle) | win32gui.FindWindow(FrameTitle, None)
     handle_id = win32gui.FindWindowEx(mumu_handle_id, 0, None, "MuMuPlayer")
 
     if handle_id is not None:
         return HANDLE(handle_id=handle_id)
+    else:
+        return None
+    
+# 获得模拟器句柄
+def get_mumu_handle(FrameTitle = "不思议迷宫"):
+    mumu_handle_id = win32gui.FindWindow(0, FrameTitle) | win32gui.FindWindow(FrameTitle, None)
+
+    if mumu_handle_id is not None:
+        return HANDLE(handle_id=mumu_handle_id)
     else:
         return None
 
@@ -148,11 +158,12 @@ def match_template(handle:HANDLE, img_template_list, match_threshold=0.8):
     return nms_dts
 
 
-def find_and_click(handle:HANDLE, path, sleep_time):
+def find_and_click(handle:HANDLE, path, sleep_time=1, match_threshold = 0.85):
     while True:
-        dts = match_template(handle, [imread(handle, path)], match_threshold=0.85)
+        dts = match_template(handle, [imread(handle, path)], match_threshold=match_threshold)
         if len(dts)>0:
             break
+    # print(dts)
     left_mouse_click(handle=handle, point=dts[0])
     time.sleep(sleep_time)
 
@@ -199,3 +210,29 @@ def SL_basic(handle:HANDLE):
         dts = match_template(handle, [imread(handle, "./img/common/setting.png")], match_threshold=0.9)
         if len(dts)>0:
             break
+
+# 暂离
+def save_staute(handle:HANDLE):
+    left_mouse_click(handle=handle, point=(0.0847222,0.0351563), normalize=True)   # 点左上角
+
+    find_and_click(handle, "./img/common/leave.png", 5)
+    find_and_click(handle, "./img/common/SLsure.png", 1)
+    find_and_click(handle, "./img/common/back.png", 7)
+    time.sleep(1)
+    while True:
+        dts = match_template(handle, [imread(handle, "./img/common/setting.png")], match_threshold=0.9)
+        if len(dts)>0:
+            break
+
+# 执行一次断网，再执行联网
+def net_state_change():
+    pyautogui.hotkey('win', 'a')
+    time.sleep(0.5)
+    pyautogui.press('right')
+    time.sleep(0.5)
+    pyautogui.press('right')
+    time.sleep(0.5)
+    pyautogui.press('enter')
+    time.sleep(0.5)
+    pyautogui.hotkey('win', 'a')
+    time.sleep(0.5)

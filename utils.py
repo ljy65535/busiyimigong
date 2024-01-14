@@ -7,13 +7,13 @@ import difflib
 
 
 
-
-
 # 从左往右为行，从上到下为列         注意屏幕输入行列相反
 rows = (190, 277, 364, 451, 538, 625)           # x轴 6行每行中心点坐标   190+i*87
 cols = (60, 155, 250, 345, 440)                 # y轴 5列每列中心点       60+j*95
 box_weight = 30                                 # Dx
 box_height = 40                                 # Dy
+
+ocr = hub.Module(name="ch_pp-ocrv3", enable_mkldnn=True)       # mkldnn加速仅在CPU下有效
 
 
 class floor():
@@ -31,7 +31,7 @@ class floor():
     # 更新当前矩阵状态
     def refresh(self, is_debug = False):
         # 截图
-        img_bottom, _ = basic.get_screenshot(handle) 
+        img_bottom, _ = basic.get_screenshot(self.handle) 
 
         # 计算每一个区域的灰度均值
         light_threshold = 85       # 亮地板均值
@@ -144,21 +144,20 @@ class floor():
         # print("")
     
     # 神锻黑尸体
-    def SL_body(self, pos:tuple=None)->bool:
+    def SL_body(self)->bool:
         # 检查尸体位置
-        if pos is None:
-            dts = basic.match_template(self.handle, 
+        dts = basic.match_template(self.handle, 
                                     [basic.imread(self.handle, './img/shenduan/body.png'), 
                                         basic.imread(self.handle, "./img/shenduan/body_9.png"),
                                         basic.imread(self.handle, "./img/shenduan/weapenpile.png")], match_threshold=0.85)
-        else:
-            dts = [basic.position_trans(handle, pos)]
-        print("尸体位置：", dts)
-        # time.sleep(10)
+        
         if len(dts)==0:
-            print("尸体不存在")
-            # 尸体不存在
-            return False
+            print("没有检测到尸体，请手动输入尸体坐标(左上角为第一行第一列[1,1]):")
+            pos = tuple(map(int, input().split()))
+            assert 0<pos[0]<7 and 0<pos[1]<7, "输入坐标有误"
+            dts = [basic.position_trans(self.handle, pos)]
+
+        print("尸体像素位置：", dts)
         
         print("找到尸体")
         print("*"*35)
@@ -168,21 +167,21 @@ class floor():
         while True:     
             print(f"第{order}次   "*5)
             
-            # 使用神恩
-            for ops in range(order//3):
-                print(f"使用{ops+1}次神恩术")
-                self.use_big_cure_skill()
+            # # 使用神恩
+            # for ops in range(order//3):
+            #     print(f"使用{ops+1}次神恩术")
+            #     self.use_big_cure_skill()
             
-            # 使用治疗
-            for ops in range(order%3):
+            # # 使用治疗
+            # for ops in range(order%3):
 
-                print(f"使用{ops+1}次治疗术")
-                self.use_cure_skill()
-
-            # 直接治疗术
-            # for ops in range(order):
             #     print(f"使用{ops+1}次治疗术")
             #     self.use_cure_skill()
+
+            # 直接治疗术
+            for ops in range(order):
+                print(f"使用{ops+1}次治疗术")
+                self.use_cure_skill()
 
             print("推序完成")
 
@@ -190,7 +189,7 @@ class floor():
             basic.left_mouse_click(handle=self.handle, point=dts[0])
             time.sleep(1)
             while True:
-                find_dts = basic.match_template(handle, [basic.imread(self.handle, './img/shenduan/find.png')], match_threshold=0.8)
+                find_dts = basic.match_template(self.handle, [basic.imread(self.handle, './img/shenduan/find.png')], match_threshold=0.8)
      
                 if len(find_dts)>0:
                     break
@@ -220,7 +219,7 @@ class floor():
         index = 0
         print("开始检测")
         while True:
-            _, img = basic.get_screenshot(handle)
+            _, img = basic.get_screenshot(self.handle)
             h, w, _ = img.shape
             top, down, left, right = int(area[0][1]*h), int(area[1][1]*h), int(area[0][0]*w), int(area[1][0]*w)
             area_img = img[top:down, left:right, :]
@@ -303,21 +302,25 @@ class floor():
         return False
     
 
-    def SL_pool(self, pos:tuple=None)->bool:
-
-        if pos is None:
-            dts = basic.match_template(self.handle, 
+    def SL_pool(self)->bool:
+        # 检查水池位置
+        dts = basic.match_template(self.handle, 
                                    [basic.imread(self.handle, './img/shenduan/pool.png')], match_threshold=0.85)
-        else:
-            dts = [basic.position_trans(handle, pos)]
-
-
-        print("水池位置：", dts)
-        # time.sleep(10)
+        
         if len(dts)==0:
-            print("水池不存在")
-            # 尸体不存在
-            return False
+            print("没有检测到水池，请手动输入水池坐标(左上角为第一行第一列[1,1]):")
+            pos = tuple(map(int, input().split()))
+            assert 0<pos[0]<7 and 0<pos[1]<7, "输入坐标有误"
+            dts = [basic.position_trans(self.handle, pos)]
+
+        # if pos is None:
+            # dts = basic.match_template(self.handle, 
+            #                        [basic.imread(self.handle, './img/shenduan/pool.png')], match_threshold=0.85)
+        # else:
+        #     dts = [basic.position_trans(self.handle, pos)]
+
+
+        print("水池像素位置：", dts)
         
         print("找到水池")
         print("*"*35)
@@ -349,7 +352,7 @@ class floor():
             basic.left_mouse_click(handle=self.handle, point=dts[0])
             time.sleep(1)
             while True:
-                find_dts = basic.match_template(handle, [basic.imread(self.handle, './img/shenduan/wash.png')], match_threshold=0.85)
+                find_dts = basic.match_template(self.handle, [basic.imread(self.handle, './img/shenduan/wash.png')], match_threshold=0.85)
                 if len(find_dts)>0:
                     break
             basic.left_mouse_click(handle=self.handle, point=find_dts[0])
@@ -374,20 +377,19 @@ class floor():
 
 
 
-if __name__ == "__main__":
-    ocr = hub.Module(name="ch_pp-ocrv3", enable_mkldnn=True)       # mkldnn加速仅在CPU下有效
-    handle = basic.get_handle()
+# if __name__ == "__main__":  
+    # handle = basic.get_handle()
 
     # img = basic.get_screenshot(handle)
     # print(img.shape)  # (883, 496)
 
-    now_floor = floor(handle)
+    # now_floor = floor(handle)
 
     
     # now_floor.SL_body()
     # now_floor.SL_pool()
 
-    now_floor.SL_body((6,3))
+    # now_floor.SL_body((6,3))
     # now_floor.SL_pool((1,4))
 
 

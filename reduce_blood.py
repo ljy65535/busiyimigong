@@ -8,12 +8,12 @@ import numpy as np
 下星光大盾、小盾
 """
 
-small_shield_up = 559150+9354583
-small_shield_down = 559150+240434
-big_shield_up = 1397875+23246670
-big_shield_down = 1397875+461299
-hit = 117952577
-all_blood = 655892
+small_shield_up = 36615+273885
+small_shield_down = 5621+42048
+big_shield_up = 91539+670980
+big_shield_down = 14053+103012
+hit = 1720894
+all_blood = 92066
 
 n = 40
 

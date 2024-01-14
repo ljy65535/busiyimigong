@@ -167,3 +167,127 @@ Mon Jan  1 20:30:22 2024
 
 
 
+6星装备测试结果
+Tue Jan  9 20:59:23 2024
+一共出现14次日光，出现位置为：
+[7, 20, 27, 29, 45, 49, 51, 59, 77, 82, 90, 94, 95, 99]
+7   xxxxxxx6
+12   xxxxxxxxxxxx6
+6   xxxxxx6
+1   x6
+15   xxxxxxxxxxxxxxx6
+3   xxx6
+1   x6
+
+7   xxxxxxx6
+17   xxxxxxxxxxxxxxxxx6
+4   xxxx6
+7   xxxxxxx6
+3   xxx6
+0   6
+3   xxx6
+1   x
+
+
+
+6星装备测试结果
+Wed Jan 10 18:56:47 2024
+一共出现16次日光，出现位置为：
+[1, 9, 12, 29, 31, 32, 47, 54, 58, 59, 60, 75, 82, 87, 96, 97]
+1   x6
+7   xxxxxxx6
+2   xx6
+16   xxxxxxxxxxxxxxxx6
+1   x6
+0   6
+14   xxxxxxxxxxxxxx6
+6   xxxxxx6
+3   xxx6
+0   6
+0   6
+14   xxxxxxxxxxxxxx6
+6   xxxxxx6
+4   xxxx6
+8   xxxxxxxx6
+0   6
+3   xxx
+
+
+
+5星装备测试结果
+Wed Jan 10 19:25:30 2024
+一共出现12次日光，出现位置为：
+[1, 9, 31, 47, 54, 59, 60, 75, 82, 87, 96, 97]
+1   x5
+7   xxxxxxx5
+21   xxxxxxxxxxxxxxxxxxxxx5
+15   xxxxxxxxxxxxxxx5
+6   xxxxxx5
+4   xxxx5
+0   5
+14   xxxxxxxxxxxxxx5
+6   xxxxxx5
+4   xxxx5
+8   xxxxxxxx5
+0   5
+3   xxx
+
+
+
+4星装备测试结果
+Wed Jan 10 19:55:44 2024
+一共出现10次日光，出现位置为：
+[1, 9, 31, 47, 54, 60, 75, 87, 96, 97]
+1   x4
+7   xxxxxxx4
+21   xxxxxxxxxxxxxxxxxxxxx4
+15   xxxxxxxxxxxxxxx4
+6   xxxxxx4
+5   xxxxx4
+14   xxxxxxxxxxxxxx4
+11   xxxxxxxxxxx4
+8   xxxxxxxx4
+0   4
+3   xxx
+
+
+
+3星装备测试结果
+Wed Jan 10 20:14:51 2024
+一共出现7次日光，出现位置为：
+[1, 9, 31, 54, 60, 87, 97]
+1   x3
+7   xxxxxxx3
+21   xxxxxxxxxxxxxxxxxxxxx3
+22   xxxxxxxxxxxxxxxxxxxxxx3
+5   xxxxx3
+26   xxxxxxxxxxxxxxxxxxxxxxxxxx3
+9   xxxxxxxxx3
+3   xxx
+
+
+
+Wed Jan 10 20:15:20 2024
+一共出现8次日光，出现位置为：
+所有装备测试结果
+1   x3
+7   xxxxxxx3
+2   xx6
+
+16   xxxxxxxxxxxxxxxx6
+1   x3
+0   6
+14   xxxxxxxxxxxxxx4
+6   xxxxxx3
+3   xxx6
+0   5
+0   3
+14   xxxxxxxxxxxxxx4
+6   xxxxxx5
+4   xxxx3
+8   xxxxxxxx4
+0   3
+3   xxx
+
+
+
